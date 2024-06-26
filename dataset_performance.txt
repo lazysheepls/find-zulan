@@ -1,0 +1,47 @@
+YOLO V8 可以找到 AI 王祖蓝吗？我们来试试。
+
+当前训练集收集了100多张王祖蓝的照片，以及20余张Phentatonix的照片进行训练。同时对数据集进行了Mosaic处理。值得注意的是，百变大咖秀中王祖蓝的照片对提升模型表现有重大帮助。
+FindZulan-3
+Introduce the non zulan class has made things worse.
+
+FindZulan-4
+Increase dataset to 42 images
+Good performance, wrong detection at the start
+200 epochs
+    Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00<00:00,  3.15it/s]
+    all          9          9      0.817      0.991      0.963      0.829
+300 epochs
+    Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00<00:00,  3.15it/s]
+    all          9          9      0.817      0.991      0.963      0.829
+
+FindZulan - 5
+Increase zulan dataset
+    Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00<00:00,  2.31it/s]
+    all         16         16      0.888      0.994      0.975      0.875
+
+FindZulan - 6
+Increase zulan dataset
+    Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 2/2 [00:00<00:00,  4.56it/s]
+    all         27         27      0.931      0.998      0.976      0.702
+
+FindZulan -7 (Mosaic)
+Mosaic数据增强。
+V5的输入端沿用了V4的Mosaic数据增强的方式，通过随机缩放，随机剪裁，随机排布的方式进行拼接，对于小目标检测的效果有明显提高。
+    Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 2/2 [00:00<00:00,  2.86it/s]
+    all         27         27      0.998          1      0.995      0.945
+
+FindZulan -8 (Mosaic + 1% Noise)
+    Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 2/2 [00:00<00:00,  2.66it/s
+    all         27         27      0.998          1      0.995      0.976
+
+FindZulan -9 (Non zulan class)
+    Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 2/2 [00:00<00:00,  3.07it/s]
+    all           32         52      0.988          1      0.995      0.909
+not_zulan          5         25      0.999          1      0.995      0.855
+    zulan         27         27      0.976          1      0.995      0.964
+
+FineZulan -9 (Trained on top of Zulan-8: overfit? )
+    Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 2/2 [00:00<00:00,  3.48it/s]
+    all           32         52      0.996          1      0.995      0.918
+not_zulan          5         25      0.998          1      0.995      0.865
+    zulan         27         27      0.995          1      0.995      0.971
