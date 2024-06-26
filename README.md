@@ -8,8 +8,6 @@ Where is zulan? Can you spot him/her in the video?
 
 [![王祖蓝一人模仿结石姐&麻辣鸡&A妹演唱《Bang Bang》但 YOLOV8](video_cover.png)](https://youtu.be/jgqQD6QcTlU)
 
-{% include youtube.html id="jgqQD6QcTlU" %}
-
 
 # Model
 
