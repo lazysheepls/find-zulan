@@ -18,15 +18,19 @@ Based on Ultralytics YOLO V8.2 nano, trained on custom dataset of two classes(`z
 
 ## Pre-processing is the key
 
-In the dataset folder, you will find 8 datasets from `d
+In the dataset folder, you will find 8 datasets from `FindZulan-2` to `FindZulan-9`.
 
 ## Using image augmentation to boost dataset size
 
 ### What augmentation methods did we use?
 
-Origin: dataset size increase from 30 images to 100+ images from `FindZulan2` to `FindZulan6`
-From `FindZulan7`: use **mosaic**, dataset size increased to 300+ images
-From `FindZulan8`: use **1% noise**, dataset size unchanged
+Origin: dataset size increase from 30 images to 100+ images from `FindZulan2` to `FindZulan6`.
+
+
+From `FindZulan7`: use **mosaic**, dataset size increased to 300+ images.
+
+
+From `FindZulan8`: use **1% noise**, dataset size unchanged.
 
 ### Conclusion
 
